@@ -12,7 +12,7 @@ theme: Boadilla
 - Neil Ashford + Max Bo
 - Committee
 - @artemis / ashfordneil0@gmail.com
-- @mb / 
+- @mb / max@maxbo.me
 - Each over a year of professional web dev experience
 
 ## You
