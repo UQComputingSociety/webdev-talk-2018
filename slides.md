@@ -1,5 +1,5 @@
 ---
-title: How to Webdev 
+title: Frontend Webdev in 2018
 author: Max Bo & Neil Ashford
 date: 2018-08-23T5:30:00+10
 institute: UQCS
@@ -19,6 +19,12 @@ theme: Boadilla
 - Year?
 - Studying?
 - Coming to the hackathon next week?
+
+## Why Webdev
+- Personal sites
+- Job market
+- Hackathons
+- Kinda fun to play with, and you can get results fast
 
 # Letsa go!
 ## What Happens When You Type google.com
