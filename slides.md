@@ -131,6 +131,12 @@ const foo = (x) => {
 
 ## A case study
 
+
+- `cd ~ && npx create-react-app --scripts-version=react-scripts-ts talk && cd talk && yarn start`
+- `code ~/talk && git init && git add package.json public/ README.md src yarn.lock .gitignore`
+
+##
+
 ```
 my-app
 --- README.md
@@ -151,10 +157,14 @@ my-app
     --- registerServiceWorker.js
 ```
 
-## 
+##
 
-- `cd ~ && npx create-react-app --scripts-version=react-scripts-ts talk && cd talk && yarn start`
-- `code ~/talk && git init && git add package.json public/ README.md src yarn.lock .gitignore`
+![](images/sass.png)
+
+##
+
+![](images/cra-sass.png)
+
 
 ##
 
@@ -220,8 +230,107 @@ index c1bc27c..2d716ed 100644
        </div>
      );
    }
-
 ```
+
+##
+
+![](images/firebase-what-you-get.png)
+
+##
+
+![](images/create-firebase.png)
+
+##
+
+
+
+```diff
+diff --git a/package.json b/package.json
+index a5dfd6a..46f1ae8 100644
+--- a/package.json
++++ b/package.json
+@@ -3,6 +3,7 @@
+   "version": "0.1.0",
+   "private": true,
+   "dependencies": {
++    "firebase": "^5.4.0",
+     "react": "^16.4.2",
+     "react-dom": "^16.4.2",
+     "react-scripts-ts": "2.17.0"
+diff --git a/src/App.tsx b/src/App.tsx
+index 2d716ed..4b8bf91 100644
+--- a/src/App.tsx
++++ b/src/App.tsx
+@@ -1,3 +1,4 @@
++import * as firebase from 'firebase';
+ import * as React from 'react';
+ import './App.css';
+ 
+@@ -9,22 +10,43 @@ interface ITodo {
+ }
+ 
+ interface IState {
+-  todos: ITodo[]
++  todos: Map<string, ITodo>
+ }
+ 
++const config = {
++  apiKey: "AIzaSyCn3VxVXEEj2-aE7wq3P77MP_JaVJADtyk",
++  authDomain: "uqcs-webdev-talk-2018.firebaseapp.com",
++  databaseURL: "https://uqcs-webdev-talk-2018.firebaseio.com",
++  messagingSenderId: "444811468582",
++  projectId: "uqcs-webdev-talk-2018",
++  storageBucket: "uqcs-webdev-talk-2018.appspot.com"
++};
++
++firebase.initializeApp(config);
++
+ class App extends React.Component<{}, IState> {
++  public fref = firebase.database().ref()
++
+   constructor(props: {}) {
+     super(props)
+ 
+     this.state = {
+-      todos: []
++      todos: {} as Map<string, ITodo>
+     }
+   }
+-
++  
+   public componentDidMount() {
+-    return fetch('https://jsonplaceholder.typicode.com/todos')
+-          .then(response => response.json())
+-          .then(json => this.setState({ todos: json }))
++    this.fref.on('value', this.firebaseCallback);
++  }
++
++  public componentWillUnmount() {
++    this.fref.off('value', this.firebaseCallback);
++  }
++
++  public firebaseCallback = (snapshot: firebase.database.DataSnapshot | null) => {
++    if (snapshot) {
++      this.setState({ todos: snapshot.val() });
++    }
+   }
+ 
+   public renderTodo = (todo: ITodo) => {
+@@ -41,7 +63,9 @@ class App extends React.Component<{}, IState> {
+   public render() {
+     return (
+       <div className="App">
+-        {this.state.todos.map(this.renderTodo)}
++        {Object.keys(this.state.todos).map(key => {
++          return this.renderTodo(this.state.todos[key])
++        })}
+       </div>
+     );
+   }
+```
+
+
+
 
 ![](pwaa-step-by-step.png)
 
