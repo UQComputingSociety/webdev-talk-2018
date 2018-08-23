@@ -68,6 +68,18 @@ theme: Boadilla
 - What if you didn't have to write JavaScript
 - TypeScript, flow (:/), elm (://), coffee script (:///), webassembly (...)
 
+
+
+## ECMAScript
+
+- https://developer.mozilla.org/en-US/docs/Web/JavaScript/New_in_JavaScript
+
+
+
+## PWA
+
+- https://developer.mozilla.org/en-US/docs/Web/Apps/Progressive 
+
 ## How _to_ Write JavaScript (or similar)
 - `const` if you can, `let` if you can't, `var` never
 - `async` and `await`
@@ -97,7 +109,52 @@ const foo = (x) => {
 - TODO
 
 ## Where to Start
-- TODO (write about generators)
+
+![](images/how-it-feels.png)
+
+## 
+
+![](images/js-bundling.png)
+
+## 
+
+![](images/create-react-app.png)
+
+
+## 
+
+![](images/vue-cli.png)
+
+## 
+
+![](images/angular-cli.png)
+
+## A case study
+
+```
+my-app
+--- README.md
+--- node_modules
+--- package.json
+--- .gitignore
+--- public
+|   --- favicon.ico
+|   --- index.html
+|   --- manifest.json
+--- src
+    --- App.css
+    --- App.js
+    --- App.test.js
+    --- index.css
+    --- index.js
+    --- logo.svg
+    --- registerServiceWorker.js
+```
+
+##
+
+![](pwaa-step-by-step.png)
+
 
 # Conclusion
 ## Thanks
