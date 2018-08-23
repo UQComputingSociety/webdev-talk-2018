@@ -49,6 +49,11 @@ theme: Boadilla
 - REST
 - GraphQL
 
+## Databases
+- Good for scaling / reliability / persistence
+- ORMs
+- prepared statements
+
 ## Serving Your Code _Fast_
 - You have lots of resources
 - Each file is a separate round-trip
