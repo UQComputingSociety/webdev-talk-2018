@@ -181,7 +181,7 @@ index 203067e..ddef4a6 100644
 +      .then(json => this.setState({ todos: json }))
 +  }
 +
-+  renderTodo(todo) {
++  renderTodo = (todo) => {
 +    const { userId,  id, title, completed } = todo
 +
 +    const status = completed ? 'completed' : 'not completed'
