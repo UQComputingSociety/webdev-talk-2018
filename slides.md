@@ -153,47 +153,60 @@ my-app
 
 ## 
 
-- `cd ~ && npx create-react-app talk && cd talk && yarn start`
-- or (`npx create-react-app talk --scripts-version=react-scripts-ts`)
-- `code ~/talk && git init && git add package.json public/ README.md src yarn.lock`
+- `cd ~ && npx create-react-app --scripts-version=react-scripts-ts talk && cd talk && yarn start`
+- `code ~/talk && git init && git add package.json public/ README.md src yarn.lock .gitignore`
 
 ##
 
 ```diff
-diff --git a/src/App.js b/src/App.js
-index 203067e..ddef4a6 100644
---- a/src/App.js
-+++ b/src/App.js
-@@ -3,16 +3,35 @@ import logo from './logo.svg';
+diff --git a/src/App.tsx b/src/App.tsx
+index c1bc27c..2d716ed 100644
+--- a/src/App.tsx
++++ b/src/App.tsx
+@@ -1,19 +1,47 @@
+ import * as React from 'react';
  import './App.css';
  
- class App extends Component {
+-import logo from './logo.svg';
++interface ITodo {
++  userId: number
++  id: number
++  title: string
++  completed: boolean
++}
+ 
+-class App extends React.Component {
++interface IState {
++  todos: ITodo[]
++}
 +
-+  constructor(props) {
++class App extends React.Component<{}, IState> {
++  constructor(props: {}) {
 +    super(props)
++
 +    this.state = {
 +      todos: []
 +    }
 +  }
 +
-+  componentDidMount() {
++  public componentDidMount() {
 +    return fetch('https://jsonplaceholder.typicode.com/todos')
-+      .then(response => response.json())
-+      .then(json => this.setState({ todos: json }))
++          .then(response => response.json())
++          .then(json => this.setState({ todos: json }))
 +  }
 +
-+  renderTodo = (todo) => {
-+    const { userId,  id, title, completed } = todo
-+
++  public renderTodo = (todo: ITodo) => {
++    const { userId, title, completed } = todo
 +    const status = completed ? 'completed' : 'not completed'
++
 +    return (
 +      <div>
-+        {`${userId} has ${status} ${title}`}
-+      </div>
++          {`${userId} has ${status} ${title}`}
++      </div >
 +    )
 +  }
-+
-   render() {
++  
+   public render() {
      return (
        <div className="App">
 -        <header className="App-header">
@@ -201,12 +214,13 @@ index 203067e..ddef4a6 100644
 -          <h1 className="App-title">Welcome to React</h1>
 -        </header>
 -        <p className="App-intro">
--          To get started, edit <code>src/App.js</code> and save to reload.
+-          To get started, edit <code>src/App.tsx</code> and save to reload.
 -        </p>
 +        {this.state.todos.map(this.renderTodo)}
        </div>
      );
    }
+
 ```
 
 ![](pwaa-step-by-step.png)
