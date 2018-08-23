@@ -116,7 +116,6 @@ const foo = (x) => {
 
 ![](images/create-react-app.png)
 
-
 ## 
 
 ![](images/vue-cli.png)
@@ -126,6 +125,18 @@ const foo = (x) => {
 ![](images/angular-cli.png)
 
 ## A case study
+
+## 
+
+![](images/create-react-app-whats-included.png)
+
+## 
+
+![](images/create-react-app-userguide.png)
+
+## 
+
+![](images/create-react-app-deployment.png)
 
 
 - `cd ~ && npx create-react-app --scripts-version=react-scripts-ts talk && cd talk && yarn start`
