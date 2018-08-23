@@ -251,7 +251,9 @@ index c1bc27c..2d716ed 100644
 
 ![](images/create-firebase.png)
 
-##
+
+
+
 
 
 
@@ -339,6 +341,19 @@ index 2d716ed..4b8bf91 100644
      );
    }
 ```
+
+##
+
+![](images/heroku.png)
+
+##
+
+![](images/heroku-buildpack.png)
+
+
+##
+
+![](images/heroku-deploy.png)
 
 
 
