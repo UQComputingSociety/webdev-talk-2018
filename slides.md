@@ -18,6 +18,7 @@ theme: Boadilla
 ## You
 - Year?
 - Studying?
+- Experience with web dev?
 - Coming to the hackathon next week?
 
 ## Why Webdev
@@ -49,6 +50,11 @@ theme: Boadilla
 - REST
 - GraphQL
 
+## Databases
+- Good for scaling / reliability / persistence
+- ORMs
+- prepared statements
+
 ## Serving Your Code _Fast_
 - You have lots of resources
 - Each file is a separate round-trip
@@ -56,6 +62,7 @@ theme: Boadilla
 - Live code reload
 - Minifying and tree shaking
 - Makes using libraries so much more feasible on the frontend
+- Can compile (transpile) your code
 
 ## Libraries Like its ${CURRENT_YEAR}
 - `<script src="https://somecdn.com/library.js.min"></script>`
@@ -67,18 +74,6 @@ theme: Boadilla
 - `"1" + 2 == "12"` but `"1" - 2 == -1`
 - What if you didn't have to write JavaScript
 - TypeScript, flow (:/), elm (://), coffee script (:///), webassembly (...)
-
-
-
-## ECMAScript
-
-- https://developer.mozilla.org/en-US/docs/Web/JavaScript/New_in_JavaScript
-
-
-
-## PWA
-
-- https://developer.mozilla.org/en-US/docs/Web/Apps/Progressive 
 
 ## How _to_ Write JavaScript (or similar)
 - `const` if you can, `let` if you can't, `var` never
@@ -92,6 +87,7 @@ function foo(x) {
 const foo = (x) => {
 }
 ```
+- ECMAscript
 
 ## CSS ~~2, Electric Boogaloo~~ 3
 - Flex, grid, and why the browser is better at calculating sizes than you are
@@ -366,11 +362,13 @@ index 2d716ed..4b8bf91 100644
 :realheart:
 
 ## Cheat Sheet and Resources
-- github pages, vultr, AWS, GCP, azure
+- github pages, vultr, AWS, GCP, azure, heroku
+- Progressive Web App (PWA)
 - flask, django, express, koa, ASP.net, SpringBoot
 - webpack, parceljs
 - react (create-react-app), angular, vue
 - Mozilla Developer Network (MDN)
 - flexbox, grid
 - caniuse.com
+- ECMAscript, typescript, flow
 - #webdev
