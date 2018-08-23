@@ -151,7 +151,62 @@ my-app
     --- registerServiceWorker.js
 ```
 
+## 
+
+- `cd ~ && npx create-react-app talk && cd talk && yarn start`
+- `code ~/talk && git init && git add package.json public/ README.md src yarn.lock`
+
 ##
+
+```diff
+diff --git a/src/App.js b/src/App.js
+index 203067e..ddef4a6 100644
+--- a/src/App.js
++++ b/src/App.js
+@@ -3,16 +3,35 @@ import logo from './logo.svg';
+ import './App.css';
+ 
+ class App extends Component {
++
++  constructor(props) {
++    super(props)
++    this.state = {
++      todos: []
++    }
++  }
++
++  componentDidMount() {
++    return fetch('https://jsonplaceholder.typicode.com/todos')
++      .then(response => response.json())
++      .then(json => this.setState({ todos: json }))
++  }
++
++  renderTodo(todo) {
++    const { userId,  id, title, completed } = todo
++
++    const status = completed ? 'completed' : 'not completed'
++    return (
++      <div>
++        {`${userId} has ${status} ${title}`}
++      </div>
++    )
++  }
++
+   render() {
+     return (
+       <div className="App">
+-        <header className="App-header">
+-          <img src={logo} className="App-logo" alt="logo" />
+-          <h1 className="App-title">Welcome to React</h1>
+-        </header>
+-        <p className="App-intro">
+-          To get started, edit <code>src/App.js</code> and save to reload.
+-        </p>
++        {this.state.todos.map(this.renderTodo)}
+       </div>
+     );
+   }
+```
 
 ![](pwaa-step-by-step.png)
 
