@@ -347,7 +347,7 @@ index 2d716ed..4b8bf91 100644
 :realheart:
 
 ## Cheat Sheet and Resources
-- github pages, vultr, AWS, GCP, azure
+- github pages, vultr, AWS, GCP, azure, heroku
 - Progressive Web App (PWA)
 - flask, django, express, koa, ASP.net, SpringBoot
 - webpack, parceljs
