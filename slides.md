@@ -154,6 +154,7 @@ my-app
 ## 
 
 - `cd ~ && npx create-react-app talk && cd talk && yarn start`
+- or (`npx create-react-app talk --scripts-version=react-scripts-ts`)
 - `code ~/talk && git init && git add package.json public/ README.md src yarn.lock`
 
 ##
