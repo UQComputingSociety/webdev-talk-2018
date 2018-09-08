@@ -354,7 +354,7 @@ index 2d716ed..4b8bf91 100644
 
 
 
-![](pwaa-step-by-step.png)
+![](images/pwa-step-by-step.png)
 
 
 # Conclusion
